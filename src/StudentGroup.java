@@ -157,7 +157,7 @@ public class StudentGroup implements StudentArrayOperation {
 	public void bubbleSort() {
 		
 		for (int i = 1; i < ar.size(); i++) {
-	        if (ar.get(i - 1) > ar.get(i)) {
+	        if (ar.get(i-1)> ar.get(i)) {
 	            Collections.swap(list, i - 1, i);
 	        }
 	    }
@@ -169,14 +169,24 @@ public class StudentGroup implements StudentArrayOperation {
 		if(date==null){
 			throw new IllegalArgumentException();
 		}
-		for(int i=0)
+		ArrayList<Student> ar1=new ArrayList<Student>(this.students);
+		Collections.sort(ar1.getBirthDate());
+		ar1.removeRange(ar.indexOf(date)+1,this.students.length);
+		ar1.remove(ar1.size-1);
 		
-		return 
+		
+		return ar1.toArray();
 	}
 
 	@Override
 	public Student[] getBetweenBirthDates(Date firstDate, Date lastDate) {
-		// Add your implementation here
+		// 
+		if(date==null){
+			throw new IllegalArgumentException();
+		}
+		ArrayList<Student> ar2=new ArrayList<Student>(this.students);
+		Colle
+		
 		return null;
 	}
 
